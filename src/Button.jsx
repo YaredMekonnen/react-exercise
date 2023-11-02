@@ -1,9 +1,11 @@
+import { useState } from "react"
 
-
-export function Button({text, color,func,msg}){
+export function Button({color}){
+    const [count, setCount] = useState(0)
+    
     return (
-        <button onClick={()=> props.func(msg)} style={{backgroundColor: color}}>
-            <p>{text}</p>
+        <button onClick={(e)=>setCount(count + 1)}  style={{backgroundColor: color}}>
+            <p>{count}</p>
         </button>
     )
 
