@@ -4,13 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ButtonSection } from './ButtonSection'
 import { Button } from './Button'
+import { Textbox } from './Textbox'
 
 function App() {
 
 
   return (
     <>
-      <Button text={"Hey, Yared :)"} color={"orange"}/>
+      <Button color={"orange"}/>
+      <Button color={"blue"}/>
+      <Button color={"green"}/>
+      <Textbox />
 
     </>
   )
