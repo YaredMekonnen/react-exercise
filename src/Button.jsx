@@ -1,20 +1,11 @@
 import { useState, useEffect } from "react"
 
-export function Button({color}){
-    const [count, setCount] = useState(0)
-    const [count2, setCount2] = useState(0)
+export function Button({color, show, setshow}){
 
-    useEffect(()=>{
-      console.log("you changed the count")
-    },[count])
-    useEffect(()=>{
-        console.log("page has rendered")
-    },[])
-    
     return (
         <>
-        <button onClick={()=>setCount(count+1)}  style={{backgroundColor: color}}>
-            <p>{count}</p>
+        <button onClick={()=>setshow(!show)}  style={{backgroundColor: color}}>
+            <p>{show ? "Hide Item" : "show item"}</p>
         </button>        
         </>
 
@@ -23,7 +14,7 @@ export function Button({color}){
 }
 
 Button.defaultProps = {
-    color: "blue",
+    color: "orange",
     text: "Hey manm"
 }
 
