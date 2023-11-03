@@ -1,30 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { ButtonSection } from './ButtonSection'
-import { Button } from './Button'
-import { Textbox } from './Textbox'
-import { TextBlock } from './TextBlock'
-import { StoreItem } from './StoreItem'
+import { HashRouter, Routes, Route, Router } from 'react-router-dom'
+import { Home } from './Pages/Home'
+import { page1 } from './Pages/page1'
+import { page2 } from './Pages/page2'
+import { page3 } from './Pages/page3'
+
 
 function App() {
+ return(
+     <Router>
+         <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/page1" element={<page1 />}/>
+        <Route path="/page2" element={<page2 />}/>
+        <Route path="/page3" element={<page3 />}/>
+         </Routes>
 
-  const [show, setshow] = useState(false)
-
-  const item1 = {title:"Bat", description:"Metal Ball", price:50}
-  const item2 = {title:"Ball", description:"Metal", price:50}
-  const item3 = {title:"Helmet", description:"Meta", price:50}
-
-  const myArray = [item1, item2,item3]
-  return (
-    <>
-
-     <Button  show={show} setshow={setshow}/>
-     {show ? <StoreItem item={item1}/> : <></>}
-
-    </>
-  )
+       
+     </Router>
+ )
+ 
 }
 
 export default App
