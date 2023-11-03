@@ -1,16 +1,23 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export function Button({color}){
     const [count, setCount] = useState(0)
+    const [count2, setCount2] = useState(0)
 
-    function handleEvent(){
-        setCount(count +1)
-    }
+    useEffect(()=>{
+      console.log("you changed the count")
+    },[count])
+    useEffect(()=>{
+        console.log("page has rendered")
+    },[])
     
     return (
-        <button onClick={()=>handleEvent()}  style={{backgroundColor: color}}>
+        <>
+        <button onClick={()=>setCount(count+1)}  style={{backgroundColor: color}}>
             <p>{count}</p>
-        </button>
+        </button>        
+        </>
+
     )
 
 }
